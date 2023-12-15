@@ -1,0 +1,24 @@
+- tệp trong /mosquitto/config/mosquitto.conf sử dụng để cài đặt thông số cho mosquitto -> hỏng tệp này thì k chạy được 
+có thể nhập vào thiết bị đầu cuối của máy chủ đang chạy bộ chứa docker này hoặc có thể bắt đầu lại.
+
+- Check PORT on docker's SH:
+	 - netstat -lntp | grep 1883 : See if port 1883 is working properly or not
+- 0.0.0.0:1883 : listen all topic on port 1883
+
+- check PORT trên terminal : sudo ss -tulpn
+- delete port: sudo kill -9 + name pid (in the Process column)
+
+- phan quyen ttyUSB               : sudo chmod a+rw /dev/ttyUSB0
+- check cong USB                  : ls /dev/ttyUSB*  
+
+- ncmli radio wifi on/off         : on/off wifi 
+- nmcli dev wifi list             : list wifi 
+- nmcli dev wifi con <wifi ssid>  : connect wifi 
+- nmcli dev wifi show             : show QR code wifi
+
+- screen -L -Logfile <path> <port> <monitor_speed>  : create file log monitor port
+ex: screen -L -Logfile ~Desktop/test.txt /dev/ttyUSB0 115200
+---- note: ctrl + A + D  => detached file ----
+
+- fuser <port>                    : check PID process using port
+
